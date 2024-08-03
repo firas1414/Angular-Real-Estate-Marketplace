@@ -1,0 +1,65 @@
+<div class=" banner">
+    <nav class="navbar">
+      <a style="text-decoration: none;" routerLink="/home"><h2 class="logo">Estate<span>Find</span></h2></a>
+      
+     
+      <ul class="mb-2">
+         <li><a routerLink="/home">Home</a></li> 
+          
+         <li><a routerLink="/about">About</a></li> 
+         <li><a routerLink="/contact">Contact</a></li>
+        
+      </ul>
+      <div>
+        <button (click)="gologin()" type="button" style="margin-right: 65px;" >Sign in</button>
+        
+      </div>
+     
+ </nav>
+ <div class="content">
+   <div class="row">
+    <div class="col-7 " style="padding: 210px 0;">
+      <h1 >Find Your Ideal Home</h1>
+    </div>
+    <div class="col-5 bg-light " style="border-radius: 10%;">
+       <h3 class="text-center m-3">Welcome to EstateFind</h3>
+       <form  class="m-5 mt-2 mb-3">
+        <div class="form">
+          <div class="input-container mb-3 mt-4">
+            <i class="fa fa-user icon"></i>
+           <input class="input-field form-control" type="text" name="f_name" [(ngModel)]="f_name" placeholder="Full Name">
+          </div>
+          <div class="input-container mb-3">
+            <i class="fa-solid fa-phone icon"></i>
+            <input class="input-field form-control" type="text" name="phone" [(ngModel)]="phone"  placeholder="Phone Number" >
+          </div> 
+          <div class="input-container mb-3">
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field form-control" type="email" name="email" [(ngModel)]="email" placeholder="Email" >
+          </div>
+
+          <div class="input-container mb-3">
+            <i class="fa  fa-solid fa-key icon"></i>
+            <input class="input-field form-control" type="password" name="password" [(ngModel)]="password" placeholder="password" >
+          </div>
+          <div class="input-container mb-3">
+            <i class="fa fa-solid fa-address-card icon"></i>
+            <input class="input-field form-control" type="text" name="cin" [(ngModel)]="cin" placeholder="cin" >
+          </div>
+        
+      </div>
+      <div class=" text-center mt-2" style="font-weight: bold; color:  rgb(220, 156, 18); " >
+        {{error}}  <ng-container *ngIf="error=='User Created'">
+         
+          <a  routerLink="/signin" style="color: rgb(220, 156, 18);">Register here</a>
+      </ng-container></div>
+     
+         <button  (click)="register()" class="btp mb-3 mt-3" style="margin-left:160px;">Submit</button>
+        </form>
+        
+    </div>
+   </div>
+
+ </div>
+ </div>
+  <app-footer></app-footer>

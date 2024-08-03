@@ -1,0 +1,112 @@
+<div class=" banner">
+  <nav class="navbar">
+    <a style="text-decoration: none;" routerLink="/home"><h2 class="logo">Estate<span>Find</span></h2></a>
+    
+   
+    <ul class="mb-2">
+       <li><a routerLink="/home">Home</a></li> 
+        
+       <li><a routerLink="/about">About</a></li> 
+       <li><a routerLink="/contact">Contact</a></li>
+      
+    </ul>
+    <ng-container *ngIf="test==0">
+      <div>
+        <button  type="button" style="margin-right: 35px;" (click)="gologin()" >Sign in</button>
+        <button  type="button" (click)="gosignup()" >Sign up</button>
+      </div>
+     </ng-container>
+     <ng-container *ngIf="test==1">
+      <div>
+          <button  type="button" style="margin-right: 35px;" (click)="logout()" >Logout</button>
+          <button  type="button" (click)="goprofile()" >Profile</button>
+        </div>
+      </ng-container>
+   
+</nav>
+  <div class="content">
+   <div class="row" style="margin-top: 70px;">
+    <div class="col-7 text-center  " style=" border-radius: 10%; padding: 50px; background-color: whitesmoke;">
+          <h3 style="font-size: 50px; margin-bottom: 50px;">Upload Images</h3>
+          <div>
+            <div class="row" style="width: 70%; margin: auto;">
+              <div class="col">
+                <div>
+                  <label for="fileInput" class="pic text-center" style="height: 200px; font-size: 35px; padding-top: 40px;">
+                    +
+                    <br>
+                    Upload
+                  </label>
+                  <input type="file" id="fileInput" (change)="fileInputChange($event)">
+                                  </div>
+              </div>
+            </div>
+          
+            <div class="row " style="margin-top: 90px;">
+              <div class="col">
+                <div class="input-container ">
+                  <i class="fa-solid fa-location-dot icon"></i>
+                  <input class="input-field" type="text" placeholder="Address" [(ngModel)]="address">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+          <div class="col-5 ba bg-light " style="border-radius: 10%;">
+            <div action="" class="m-4">
+              <div class="input-container mb-3">
+                <i class="fa-solid fa-t icon"></i>
+                <input class="input-field" type="text" placeholder="Title" [(ngModel)]="title">
+              </div>
+              <div class="input-container mb-3">
+                <i class="fa fa-envelope icon"></i>
+                <input class="input-field" type="email" placeholder="Email" [(ngModel)]="email"  disabled >
+              </div>
+              <div class="input-container mb-4">
+                <i class="fa-solid fa-phone icon"></i>
+                <input class="input-field" type="tel" placeholder="Phone" [(ngModel)]="phone" disabled >
+              </div>
+              <div class="row " style="width: 95%; margin: auto;">
+                <div class="col-6">
+                  <div class="input-container mb-4">
+                    <i class="fa-solid fa-m icon"></i>
+                    <input class="input-field" type="number" placeholder="Surface" [(ngModel)]="surface">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="input-container mb-4">
+                    <i class="fa-solid fa-bed icon"></i>
+                    <input class="input-field" type="number" placeholder="Nb bedroom" [(ngModel)]="nb_bedroom">
+                  </div>
+                </div>
+              </div>
+              <div class="row " style="width: 95%; margin: auto;">
+                <div class="col-6">
+                  <div class="input-container mb-4">
+                    <i class="fa-solid fa-toilet icon "></i>
+                    <input class="input-field" type="number" placeholder="Nb bathroom" [(ngModel)]="nb_bathroom">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <select class="form-select form-select-lg  hei" style="width: 90%; margin: auto;" [(ngModel)]="selectedOption">
+                    
+                    <option value="S">Sell</option>
+                    <option value="R">Rent</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-container mb-4">
+                <i class="fa-solid fa-money-check-dollar icon"></i>
+                <input class="input-field" type="number" placeholder="Price" [(ngModel)]="price">
+              </div>
+       
+              <button class="btn btn-primary" style="margin-top: 30px; margin-left:175px;" (click)="uploadProperty()">Upload</button>
+            </div>
+            
+          </div>
+    </div>
+   </div>
+ 
+</div>
+
+  <app-footer ></app-footer>

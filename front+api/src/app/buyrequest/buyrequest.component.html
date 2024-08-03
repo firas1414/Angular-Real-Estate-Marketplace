@@ -1,0 +1,113 @@
+
+<div class=" banner">
+    <nav class="navbar">
+      <a style="text-decoration: none;" routerLink="/home"><h2 class="logo">Estate<span>Find</span></h2></a>
+      
+     
+      <ul class="mb-2">
+         <li><a routerLink="/home" >Home</a></li> 
+         
+         <li><a routerLink="/about">About</a></li> 
+         <li><a routerLink="/contact">Contact</a></li>
+        
+      </ul>
+      <ng-container *ngIf="test==0">
+        <div>
+          <button  type="button" style="margin-right: 35px;" (click)="gologin()" >Sign in</button>
+          <button  type="button" (click)="gosignup()" >Sign up</button>
+        </div>
+       </ng-container>
+       <ng-container *ngIf="test==1">
+        <div>
+            <button  type="button" style="margin-right: 35px;" (click)="logout()" >Logout</button>
+            <button  type="button" (click)="goprofile()" >Profile</button>
+          </div>
+        </ng-container>
+     
+  </nav>
+<div class="content">
+    <div class="row">
+        <div class="col-7" >
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner" style="overflow: hidden;">
+              <div class="carousel-item active">
+                <img src="{{obj[0].pic1}}" class="card-img-top" alt="..." height="470px" >
+                
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"  data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="row">
+          <div class="col-9 bg-light p-3" style="font-weight: bold;">
+            <h4 class="mb-2 " style="font-size: 30px; font-weight: bold;  color:  rgb(220, 156, 18);">For Sell</h4>
+            <p class="m-2  ">{{obj[0].price}} DT</p>
+            <p class="m-2">{{obj[0].nb_badroom}}bed|{{obj[0].nb_bathroom}}bath|{{obj[0].surface}}sqft Adresse:{{obj[0].adress}}</p>
+          </div>
+        <div class="col-3 bg-light">
+           <img src="../../assets/img/carte.PNG" style="height: 138px; width: 100%;" alt="">
+        </div>
+        </div>
+        </div>
+        <div class="col-5 bg-light">
+            <h3 class="text-center m-3 mb-4 " style="font-weight: bold;">Contact The owner</h3>
+            <div>
+             <div class="form">
+                <div class="input-container mb-3">
+                    <i class="fa fa-user icon"></i>
+                   <input class="input-field" type="text" placeholder="Full Name" [(ngModel)]="name" disabled>
+                  </div> 
+                  <div class="input-container mb-3">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" type="email" placeholder="Email" [(ngModel)]="emailu" disabled>
+                  </div>
+                  <div class="input-container mb-4">
+                    <i class="fa-solid fa-phone icon"></i>
+                    <input class="input-field" type="tel" placeholder="Phone"  [(ngModel)]="phone" disabled>
+                  </div>
+                   
+                  <div class="input-container mb-3">
+                    <i class="fa  icon"><label for="">Sugg Price</label></i>
+                    
+                    <input class="input-field" type="number"   [(ngModel)]="pr">
+                  </div> 
+                  
+                  <div class="form-group mb-3 " style="width: 90%; margin: auto;">
+                    <label >Message</label>
+         
+                    <textarea class="form-control" style="width: 95%; margin: auto;" rows="5" [(ngModel)]="msg" ></textarea>
+
+                  </div>
+                  <button  (click)="send()" class="btp mb-3 mt-3" style="margin-left: 225px;" >Send</button>
+                  <ng-container *ngIf="test==0" >
+                    <div class="mb-3 mt-3 text-center">
+                      <H6  style="font-weight: bold; display: inline;  color: black;">{{error}} </H6>
+                      <a id="at"  routerLink="/signin" style="color: rgb(220, 156, 18); font-weight: bold;"> </a>
+                      
+                    </div>
+                </ng-container>
+                </div>
+        </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<app-footer></app-footer>

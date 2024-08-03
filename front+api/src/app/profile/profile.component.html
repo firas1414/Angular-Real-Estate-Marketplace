@@ -1,0 +1,65 @@
+<div class="banner">
+    <nav class="navbar text-center">
+      <a class="text-center" style="text-decoration: none;" routerLink="/home">
+        <h2 class="logo">Estate<span>Find</span></h2>
+      </a>
+      
+       <ng-container *ngIf="test==1">
+        <div>
+            <button  type="button" style="margin-right: 35px;" (click)="logout()" >Logout</button>
+            <button  type="button" (click)="gohome()" >Home</button>
+          </div>
+        </ng-container>
+    </nav>
+    <div class="content-container " >
+        
+      <div class="row d-flex justify-content-between " style="padding-bottom: 3px; margin-right: 100px; width: 90%; margin: auto; margin-top: 50px;">
+        
+        <div class="col-md-4 d-flex justify-content-center bg-dark p-2" style="border-radius: 3%;" *ngFor="let i of list_houses">
+          <div class="card mt-2" style="margin-bottom: 70px; width: 24.3rem; height: 350px">
+            <img src="{{i.pic1}}"  style="height: 230px;">
+            <div class="card-body mt-2" style="width: 24.3rem">
+              <h5 class="card-title mt-1 mb-2">{{i.Title}}</h5>
+              <p class="card-text">
+                Address :{{i.adress}}
+                Price:{{i.price}}
+              </p>
+              <div class="row mt-1 " style="width: 65%; margin: auto;">
+                <div class="col-6">
+                    <button class="btn btn-outline-warning mb-2 mt-2" style="width: 110px; padding: 3px 3px;" (click)="update(i)">Edit</button>
+
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-warning mb-2 mt-2" style="width: 110px; padding: 3px 3px;" (click)="delete(i.id)">Delete</button>
+
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div>
+            
+          </div>
+          <div class="bg-dark text-center mt-5 mb-5" style="border-radius: 3%;">
+            <h2 style="color:  rgb(220, 156, 18)" class="mt-3 mb-3">Offer received</h2>
+          <div class="row bg-dark p-3" style="opacity: 0.9; font-weight: bold ; font-size: 20px; " *ngFor="let j of req " >
+            <div class="col-3 bg-light" style="border-radius: 3%;">
+                
+                    <p class="p-3" style="color:  rgb(220, 156, 18)">New Request</p> 
+                
+               
+            </div>
+            <div class="col-9 bg-light">
+                <p class="p-2">{{j.message}}</p> 
+             </div>
+             
+          </div>  
+        </div>
+    </div>
+      
+
+    </div>
+  </div>
+
+  <app-footer ></app-footer>
+  

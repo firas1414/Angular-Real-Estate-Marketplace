@@ -1,0 +1,41 @@
+<div class=" banner">
+    <nav class="navbar">
+        <a style="text-decoration: none;" routerLink="/home"><h2 class="logo">Estate<span>Find</span></h2></a>
+        
+       
+        <ng-container *ngIf="test==1">
+            <div>
+                <button  type="button" style="margin-right: 35px;" (click)="logout()" >Logout</button>
+                <button  type="button" (click)="gohome()" >Home</button>
+              </div>
+            </ng-container>
+    
+       
+    </nav>
+    <div class="content bg-dark mt-5 p-4 text-center" style="border-radius: 5%; width: 70%; margin: auto; font-weight: bold; opacity: 0.9;">
+        <div style=" width: 70%; margin: auto; border-radius: 3%;" class="mb-3 bg-warning">
+            <img style="height: 300px; width: 100%; margin: auto;" class="p-1" [src]="pic" alt="">
+        </div>
+        <div class="row text-center mt-5" style="width: 70%; margin: auto;">
+            
+            <div class="input-container mb-3">
+                <i class="fa-solid fa-t icon"></i>
+                <input class="input-field" type="text" placeholder="Title"  [(ngModel)]="title">
+              </div>
+               
+              <div class="input-container mb-3">
+                <i class="fa-solid fa-money-check-dollar icon"></i>
+                <input class="input-field" type="number" placeholder="Price"  [(ngModel)]="price">
+              </div>
+              <select class="form-select form-select-lg  hei mb-3" style="width: 90%; margin: auto; height: 50px;" [(ngModel)]="selectedOption" >
+                    
+                <option value="S" class="p-1" >Sell</option>
+                <option value="R">Rent</option>
+              </select>
+        </div>
+      
+        <button (click)="update()">Update</button>
+    </div>
+    
+    </div>
+    <app-footer></app-footer>
